@@ -27,9 +27,9 @@ public class BaseTestClass {
 	@AfterClass
 	public void tearDown() {
 		// Quit the WebDriver instance
-		/*if (driver != null) {
+		if (driver != null) {
 			driver.quit();
-		}*/
+		}
 	}
 }
 
