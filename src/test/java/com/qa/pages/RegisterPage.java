@@ -39,6 +39,9 @@ public class RegisterPage extends BaseTestClass {
 
 	/*@FindBy (xpath="//li[text()='The specified email already exists']")
 	WebElement confirmationMessage;*/
+	@FindBy (xpath="//div[@class='page-body']")
+	WebElement registerCompleted;
+	
 
 	@FindBy (xpath="(//a[@class='account'])[1]")
 	WebElement account;
@@ -67,6 +70,10 @@ public class RegisterPage extends BaseTestClass {
 		} else {
 			System.out.println("Registration failed! because of "+message);
 		}*/
+	}
+	public String registerDone() {
+		String rdone=registerCompleted.getText();
+		return rdone;
 	}
 
 	public String user() {

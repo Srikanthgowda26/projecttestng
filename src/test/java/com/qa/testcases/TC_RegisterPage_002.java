@@ -16,7 +16,7 @@ public class TC_RegisterPage_002 extends BaseTestClass{
 	@Test(priority = 2)
 	public void test2() {
 		RegisterPage rp = new RegisterPage(driver);
-		rp.registerUser("Test","User1","Testuserhigh121@gmail.com");
+		rp.registerUser("Test","User1","Testuserhigh111@gmail.com");
 		rp.userPassword("User@test","User@test");
 		rp.register();
 	}
@@ -24,9 +24,11 @@ public class TC_RegisterPage_002 extends BaseTestClass{
 	@Test(priority = 3)
 	public void validateRegistration() {
 		RegisterPage rp = new RegisterPage(driver);
+		String successMsg=rp.registerDone();
+		System.out.println("status of the registration = "+successMsg);
 		String actualUser=rp.user();
 		System.out.println("actual user name is = "+actualUser);
-		String expectedUser=("Testuserhigh121@gmail.com");
+		String expectedUser=("Testuserhigh111@gmail.com");
 		System.out.println("expected user name is = "+expectedUser);
 		
 		Assert.assertEquals(actualUser,expectedUser);
